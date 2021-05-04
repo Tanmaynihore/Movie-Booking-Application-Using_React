@@ -5,12 +5,7 @@ import moviesData from "../../common/moviesData";
 import Typography from "@material-ui/core/Typography";
 import "./Details.css";
 import Home from "../home/Home";
-<<<<<<< HEAD
-// import YouTube from "react-youtube";
 import YouTubeIcon from '@material-ui/icons/YouTube';
-=======
-import YouTube from "react-youtube";
->>>>>>> 594c37151c02cd4bcc9821053d9241921716214c
 import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
 import GridListTileBar from "@material-ui/core/GridListTileBar";
@@ -143,11 +138,8 @@ class Details extends Component {
               <Typography>
                 <span className="bold">Trailer:</span>
               </Typography>
-<<<<<<< HEAD
               <YouTubeIcon
-=======
-              <YouTube
->>>>>>> 594c37151c02cd4bcc9821053d9241921716214c
+
                 videoId={movie.trailer_url.split("?v=")[1]}
                 opts={opts}
                 onReady={this._onReady}
