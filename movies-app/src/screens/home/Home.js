@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import ReactDOM from 'react-dom';
+import ReactDOM from "react-dom";
 import { GridList, GridListTile, GridListTileBar } from "@material-ui/core";
 import "./Home.css";
 import Header from "../../common/header/Header.js";
 import moviesData from "../../common/moviesData.js";
+import Details from "../details/Details.js";
 import {
   Theme,
   createStyles,
@@ -11,7 +12,6 @@ import {
   withStyles,
 } from "@material-ui/core/styles";
 import {
- 
   Card,
   CardContent,
   Typography,
@@ -23,8 +23,8 @@ import {
   TextField,
   Button,
   InputLabel,
+  FormControl,
 } from "@material-ui/core";
-import FormControl from '@material-ui/core/FormControl';
 import artists from "../../common/artists";
 import genres from "../../common/genre";
 
@@ -60,52 +60,52 @@ const styles = (theme) => ({
 });
 
 class Home extends Component {
+  constructor() {
+    super();
+    this.state = {
+      movieName: "",
+      upcomingMovies: [],
+      releasedMovies: [],
+      genres: [],
+      artists: [],
+      genresList: genres,
+      artistsList: artists,
+      releaseDateStart: "",
+      releaseDateEnd: "",
+    };
+  }
 
-    constructor() {
-        super();
-        this.state = {
-            movieName: "",
-            upcomingMovies: [],
-            releasedMovies: [],
-            genres: [],
-            artists: [],
-            genresList: genres,
-            artistsList: artists,
-            releaseDateStart: "",
-            releaseDateEnd: ""
-        }
-    }
-    
-    movieNameChangeHandler = event => {
-      this.setState({ movieName: event.target.value });
-    }
-    
-    genreSelectHandler = event => {
-      this.setState({ genres: event.target.value });
-    }
-    
-    artistSelectHandler = event => {
-      this.setState({ artists: event.target.value });
-    }
-    
-    releaseDateStartHandler = event => {
-      this.setState({ releaseDateStart: event.target.value });
-    }
-    
-    releaseDateEndHandler = event => {
-      this.setState({ releaseDateEnd: event.target.value });
-    }
-    
+  movieNameChangeHandler = (event) => {
+    this.setState({ movieName: event.target.value });
+  };
 
+  genreSelectHandler = (event) => {
+    this.setState({ genres: event.target.value });
+  };
 
+  artistSelectHandler = (event) => {
+    this.setState({ artists: event.target.value });
+  };
+
+  releaseDateStartHandler = (event) => {
+    this.setState({ releaseDateStart: event.target.value });
+  };
+
+  releaseDateEndHandler = (event) => {
+    this.setState({ releaseDateEnd: event.target.value });
+  };
+
+  movieClickHandler = (movieId) => {
+    ReactDOM.render(<Details movieId={movieId} />, document.getElementById('root'));
+  }
   render() {
     const { classes } = this.props;
-    //     var filterMovie=moviesData.filter((movie)=>{
-    //     return(movie.title=== this.state.movieName ||this.state.artists.includes( (movie.artists[0].first_name+" "+movie.artists[0].last_name)))
-    //   })
-    //     if(this.state.movieName.length ==0  && this.state.artists.length == 0){
-    //       filterMovie=moviesData;
-    //     }
+        var filterMovie=moviesData.filter((movie)=>{
+        return(movie.title=== this.state.movieName ||this.state.artists.includes( (movie.artists[0].first_name+" "+movie.artists[0].last_name)))
+      })
+        if(this.state.movieName.length ==0  && this.state.artists.length == 0){
+          filterMovie=moviesData;
+        }
     return (
       <div>
         <>
