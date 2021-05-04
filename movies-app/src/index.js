@@ -5,7 +5,6 @@ import Home from "./screens/home/Home.js";
 
 ReactDOM.render(
   <>
-    {/* <Header />, */}
     <Home />
   </>,
   document.getElementById("root")
