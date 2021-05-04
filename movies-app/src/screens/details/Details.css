@@ -53,8 +53,11 @@
 iframe {
   width: 100% !important;
 }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 594c37151c02cd4bcc9821053d9241921716214c
 @media (max-width: 992px) {
   .leftDetails {
     width: 100%;
