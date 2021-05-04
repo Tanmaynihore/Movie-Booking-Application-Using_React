@@ -1,24 +1,22 @@
-.Header{
-    Background-color:#222;
-    height:36px;
-    padding:8px 8px 32px 16px;
- 
+.Header {
+  background-color: #222;
+  height: 36px;
+  padding: 8px 8px 32px 16px;
 }
-.Logo{
-    Background-color:#ff7f7f;
-    height:35px;
+.Logo {
+  background-color: #ff7f7f;
+  height: 35px;
 }
-@media (prefers-reduced-motion:no-preference) {
-    .Logo{
-        animation:App-logo-spin infinite 8s;
-    }
+@media (prefers-reduced-motion: no-preference) {
+  .Logo {
+    animation: App-logo-spin infinite 8s;
+  }
 }
 @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
   }
-  
+  to {
+    transform: rotate(360deg);
+  }
+}
